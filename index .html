@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download - Fuel Loader</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* 为打开网站按钮添加特殊样式 */
+        .btn-open-website {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 1.5rem;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+        
+        .btn-open-website:hover {
+            background: linear-gradient(45deg, #2980b9, #1f618d);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>Fuel Loader</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="download.html" class="active">Download</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="download-section">
+            <h2>Download the Fuel Loader!</h2>
+            <p>For windows only!</p>
+            
+            <div class="download-grid">
+                <div class="download-card" data-platform="windows">
+                    <div class="platform-icon">🪟</div>
+                    <h3> 禁止英语包</h3>
+                    <p>禁止英语</p>
+                    <p class="file-size">~40.1 MB</p>
+                    <button class="btn-download" data-file="NE.zip">Download</button>
+                </div>
+
+                <div class="download-card" data-platform="windows">
+                    <div class="platform-icon">💻</div>
+                    <h3>Office 2007</h3>
+                    <p>Office 2007</p>
+                    <p class="file-size">~45 MB</p>
+                    <button class="btn-download" data-file="office.zip">Download</button>
+                </div>
+
+                <div class="download-card" data-platform="英语试卷">
+                    <div class="platform-icon">📦</div>
+                    <h3>source code</h3>
+                    <p>source code(.tar.gz)</p>
+                    <p class="file-size"> ~10 MB</p>
+                    <button class="btn-download" data-file="eb.docx">Download</button>
+                </div>
+
+                <div class="download-card" data-platform="S.F.C.CE">
+                    <div class="platform-icon">📦</div>
+                    <h3>S.F.C.Community</h3>
+                    <p>S.F.C.Community Website</p>
+                    <p class="file-size">Online Website</p>
+                    <button class="btn-open-website" id="open-sfc-website">Open S.F.C. Community</button>
+                </div>
+                
+                <div class="download-card" data-platform="数学光盘">
+                    <div class="platform-icon">📦</div>
+                    <h3>HTML Source</h3>
+                    <p>source of html</p>
+                    <p class="file-size">~21 KB</p>
+                    <button class="btn-download" data-file="6a.zip">Download</button>
+                </div>
+                
+                <div class="download-card" data-platform="None">
+                    <div class="platform-icon">📦</div>
+                    <h3>Instructions for Use!</h3>
+                    <p>Help files(.txt)</p>
+                    <p class="file-size">~1 KB</p>
+                    <button class="btn-download" data-file="help.txt">Download</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="installation-guide">
+            <h3>Help</h3>
+            <div class="guide-content">
+                <div class="guide-step">
+                    <h4>Install</h4>
+                    <p>1. Download file.</p>
+                    <p>2. Run the file.</p>
+                    <p>3. Locate the Version and Path</p>
+                    <p>4. Run the file.</p>
+                </div>
+                
+                <div class="guide-step">
+                    <h4>Windows exe</h4>
+                    <p>1. Download file.</p>
+                    <p>2. Run the file</p>
+                </div>
+                
+                <div class="guide-step">
+                    <h4>System requirements</h4>
+                    <ul>
+                        <li>Windows operating system</li>
+                        <li>At least 2GB of available memory</li>
+                        <li>100MB of free disk space</li>
+                        <li>The complete dll file.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Fuel Loader. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // 为打开网站按钮添加事件
+        document.getElementById('open-sfc-website').addEventListener('click', function() {
+            // 打开指定网址
+            window.open('https://as50sb.github.io/sfcce', '_blank');
+            
+            // 显示提示
+            showWebsiteToast('Opening S.F.C. Community Website...');
+        });
+        
+        function showWebsiteToast(message) {
+            // 移除现有的提示
+            const existingToast = document.querySelector('.website-toast');
+            if (existingToast) {
+                existingToast.remove();
+            }
+            
+            const toast = document.createElement('div');
+            toast.className = 'website-toast';
+            toast.innerHTML = `
+                <div class="toast-content">
+                    <span class="toast-icon">🌐</span>
+                    <span class="toast-message">${message}</span>
+                </div>
+            `;
+            
+            toast.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: linear-gradient(45deg, #3498db, #2980b9);
+                color: white;
+                padding: 15px 25px;
+                border-radius: 10px;
+                z-index: 10000;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+                animation: slideInRight 0.3s ease, slideOutRight 0.3s ease 2.7s;
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255,255,255,0.2);
+            `;
+            
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                if (toast.parentNode) {
+                    toast.remove();
+                }
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
